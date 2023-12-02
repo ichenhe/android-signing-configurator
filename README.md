@@ -157,3 +157,28 @@ regex(buildType = "release".toRegex(), flavor = "store_.+".toRegex()) {
 }
 ```
 
+## Publish
+
+> For plugin developer only
+
+### Signing
+
+Add signing information to Gradle's properties (`~/.gradle/gradle.properties`):
+
+```properties
+signing.keyId=xxxxxxxx
+signing.password=xxx
+signing.secretKeyRingFile=/path/to/keyring.gpg
+```
+
+[Signing Plugin Docs](https://docs.gradle.org/current/userguide/signing_plugin.html#sec:signatory_credentials)
+
+### Gradle Portal
+
+Add API keys of gradle plugin portal to Gradle's properties (`~/.gradle/gradle.properties`):
+
+```properties
+gradle.publish.key=xxxx
+gradle.publish.secret=xxxx
+```
+
