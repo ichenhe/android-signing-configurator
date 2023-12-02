@@ -13,7 +13,7 @@ Actions).
 is configured manually via `android.signingConfigs{}` block. This plugin does not sign the app
 directly.
 
-## Quick start
+# Quick start
 
 This plugin was designed with convention-over-configuration, which means it can works correctly
 without any configuration - **just apply the plugin**.
@@ -46,7 +46,7 @@ androidSigning {
 }
 ```
 
-## Cert sources
+# Cert sources
 
 `keyProfiles` block configures where to read signing key from. The name of each profile will be
 passed to `android.signingConfigs`. More than one profile can be configured through
@@ -62,7 +62,7 @@ keyProfiles {
 }
 ```
 
-### From environment variable
+## From environment variable
 
 `fromEnvironmentVariable()` adds a source that read information from environment variables. For the
 default supported var names, please see the example:
@@ -86,7 +86,7 @@ ANDROID_SIGNING_KEY_ALIAS=myapp
 ANDROID_SIGNING_KEY_PWD=654321
 ```
 
-### From properties file
+## From properties file
 
 `fromPropertiesFile()` adds a source that read information from a specific properties file. For the
 default values of the properties of this source, see the example:
@@ -117,7 +117,7 @@ keyAliasKey=myapp
 keyPassword=654321
 ```
 
-## Target
+# Target
 
 `targets` block configures which builds need to be signed, and which key to sign them with. Multiple
 targets can be configured, each using a different key profile.
@@ -157,11 +157,11 @@ regex(buildType = "release".toRegex(), flavor = "store_.+".toRegex()) {
 }
 ```
 
-## Publish
+# Publish
 
 > For plugin developer only
 
-### Signing
+## Signing
 
 Add signing information to Gradle's properties (`~/.gradle/gradle.properties`):
 
@@ -173,7 +173,7 @@ signing.secretKeyRingFile=/path/to/keyring.gpg
 
 [Signing Plugin Docs](https://docs.gradle.org/current/userguide/signing_plugin.html#sec:signatory_credentials)
 
-### Gradle Portal
+## Gradle Portal
 
 Add API keys of gradle plugin portal to Gradle's properties (`~/.gradle/gradle.properties`):
 
